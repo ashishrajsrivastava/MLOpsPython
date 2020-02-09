@@ -23,10 +23,10 @@ variables:
 steps:
 - task: AzureResourceGroupDeployment@2
   inputs:
-    azureSubscription: 'AzureResourceConnection'
+    azureSubscription: 'adpsub1'
     action: 'Create Or Update Resource Group'
     resourceGroupName: '$(RESOURCE_GROUP)'
-    location: $(LOCATION)
+    location: '$(LOCATION)'
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.SourcesDirectory)/environment_setup/arm-templates/cloud-environment.json'
     overrideParameters: '-baseName $(BASE_NAME) -location $(LOCATION) -workspace $(WORKSPACE_NAME)'

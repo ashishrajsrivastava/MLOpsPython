@@ -11,10 +11,9 @@ variables:
 steps:
 - task: AzureResourceGroupDeployment@2
   inputs:
-    azureSubscription: 'AzureResourceConnection'
+    azureSubscription: 'adpsub1'
     action: 'DeleteRG'
     resourceGroupName: '$(RESOURCE_GROUP)'
-    location: $(LOCATION)
   displayName: 'Delete resources in Azure'
 
   
